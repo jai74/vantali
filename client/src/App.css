@@ -1,0 +1,191 @@
+.font-serif {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 5rem; /* Adjust size as needed */
+}
+
+body {
+  /* background-image: url("pxfuel.jpg"); */
+  /* background-size: cover; Cover the entire element with the background image */
+  /* background-position: center; Center the background image */
+  /* background-repeat: no-repeat; Prevent background image from repeating  */
+  background: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  max-width: 100%; /* Allow text to take full width within container */
+}
+
+h5 {
+  font-size: 1.8rem; /* Adjust size as needed */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 55%;
+  width: 100%;
+  margin: 0 auto; /* Center the container */
+}
+
+.logo-image {
+  height: 2.5rem; /* Adjust the height of the logo as needed */
+  margin-right: 0.75rem; /* Adjust the margin between the logo and text */
+}
+
+.navbar {
+  text-align: center;
+  width: 100%;
+  padding: 2rem; /* Adjust padding as needed */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align to the left */
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: bold; /* Adjust font-weight as needed */
+  font-size: 2rem; /* Adjust the font size as needed */
+}
+
+.navbar-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Add the following styles for the social icons in the footer */
+.flex-row {
+  flex-direction: row;
+}
+
+/* Update the padding for your specific needs */
+.col {
+  padding: 0 15px;
+}
+
+/* Add the following styles for the main section */
+section {
+  flex: 1;
+  margin-top: -10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Adjust the margin properties to control the spacing */
+/* Set margin and padding to 0 for the form elements */
+.form-input {
+  margin: 0;
+  padding: 10;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem; /* Adjust the font size as needed */
+  padding-left: 1rem;
+  width: 30%; /* Adjust the width as needed */
+  height: 3rem;
+  border: none; /* Remove border */
+  border-radius: 50px; /* Add some border radius for rounded corners */
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.btn {
+  margin: 0;
+  padding: 10;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: bolder;
+  font-size: 1rem; /* Adjust the font size as needed */
+  text-align: center;
+  width: 15%;
+  height: 3rem;
+  background-color: black; /* Green background color - adjust as needed */
+  color: white; /* Text color */
+  border: 2px solid white; /* Remove border */
+  border-radius: 50px; /* Add some border radius for rounded corners */
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  cursor: pointer; /* Add cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.btn:hover {
+  background-color: white; /* Darker green on hover - adjust as needed */
+  color: black;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Add the following styles for the alerts */
+.alert {
+  margin: 0 auto;
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  body {
+    align-items: center;
+  }
+  .logo-image {
+    height: 2.3rem; /* Adjust the height of the logo as needed */
+    margin-right: 0.35rem; /* Adjust the margin between the logo and text */
+  }
+  .navbar-brand {
+    margin-top: 0.2rem; /* Adjust the margin between the logo and text */
+    margin-left: 7%; /* Adjust the margin between the logo and text */
+    margin-bottom: 6rem; /* Adjust the margin between the logo and text */
+    font-size: 1.7rem; /* Adjust the font size as needed */
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .font-serif {
+    font-size: 2.5rem;
+  }
+  h5 {
+    font-size: 1.25rem; /* Adjust size as needed for smaller screens */
+  }
+  .container {
+    margin: 0 auto;
+    max-width: 100%; /* Adjust the container width for smaller screens */
+  }
+  .form-input {
+    height: 3rem;
+    width: 100%; /* Make the button full width */
+    margin-bottom: 10px; /* Add some spacing between input and button */
+    padding-left: 2rem;
+    border-radius: 50px; /* Add some border radius for rounded corners */
+    font-size: 1.125rem; /* Adjust the font size as needed */
+  }
+  .btn {
+    height: 3rem;
+    width: 100%; /* Make the button full width */
+    border-radius: 50px; /* Add some border radius for rounded corners */
+    font-size: 1.125rem; /* Adjust the font size as needed */
+  }
+}
+
+/* Add the following styles for the footer */
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 1rem; /* Adjust padding as needed */
+}

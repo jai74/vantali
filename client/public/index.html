@@ -1,0 +1,149 @@
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Inter&family=Gilda+Display&display=swap');
+</style>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&display=swap');
+</style>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<nav class="navbar fixed top-0 w-full bg-black lg:bg-black" id="navbar">
+	<div class="container">
+		<a class="navbar-brand my-5 text-white">
+			<img src="vantali_logo.png" alt="Logo" class="logo-image" />
+			<span class="lg:text-3xl">Vantali</span>
+		</a>
+		<div class="navbar-row" id="navbar-row">
+			<ul class="navbar-col"></ul>
+			<ul class="navbar-col"></ul>
+			<ul class="navbar-col"></ul>
+		</div>
+	</div>
+</nav>
+<section class="relative h-screen flex items-center pt-20 bg-black md:pt-0 lg:bg-black">
+	<div class="container text-white relative">
+		<div class="row flex text-center justify-center">
+			<div class="col -mt-32 md:w-7/12">
+				<h1 class="font-serif font-semibold tracking-wide">Do Less.
+					<br />Care More.
+				</h1>
+				<h5 class="letter-spacing-lg h5 mx-auto mt-6 mb-12 leading-6 lg:text-xl lg:leading-normal">Securely
+					transform
+					doctor-patient conversations into EHR docs, convert speech to prescriptions, and access medical case
+					studies
+				</h5>
+				<form onsubmit="showSuccessMessage();" class="flex flex-col md:flex-row mx-auto max-w-md gap-y-2"
+					data-formid="38f1c2f6-043a-4c96-88f1-9ed1a83a21a1">
+					<input type="email"
+						class="flex-grow form-input focus:border-primary rounded-l px-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white border-primary md:rounded-r-none"
+						placeholder="Please enter your email" name="email" required="" />
+					<button
+						class="z-[1] btn btn-primary relative flex-none px-7 bg-gradient-to-r from-primary to-secondary border-none border-l-none hover:from-primary-700 hover:to-secondary-700 md:py-4 md:rounded-l-none lg:from-secondary"
+						type="submit">
+						<span
+							class="filter z-[-1] transform absolute top-[50%] w-[calc(100%+16px)] h-[133%] translate-y-[-50%] rounded blur-lg lg:bg-gradient-to-br lg:from-primary lg:to-secondary"
+							style="background:inherit"></span>Notify Me!
+					</button>
+				</form>
+				<div data-form-successid="38f1c2f6-043a-4c96-88f1-9ed1a83a21a1"
+					class="d-js alert alert-success bg-success text-white">
+					<p class="mb-0">Thank you! We received your message and will contact you back soon.</p>
+				</div>
+				<div data-form-errorid="38f1c2f6-043a-4c96-88f1-9ed1a83a21a1"
+					class="d-js alert alert-danger bg-danger text-white mt-2">
+					<p class="mb-0">Error sending. Please try again.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer class="fixed bottom-0 w-full py-3">
+	<div class="container">
+		<div class="row items-center justify-center">
+			<div class="col lg:w-3/12 text-center mt-3 lg:mt-0">
+				<div class="flex flex-row justify-center mb-0 gap-x-4">
+					<a class="text-white" href="#" title="facebook">
+						<i class="-facebook fab fa-instagram fa-lg"></i>
+					</a>
+					<a class="text-white" href="#" title="twitter">
+						<i class="fab fa-lg fa-twitter"></i>
+					</a>
+					<a class="text-white" href="#" title="linkedin">
+						<i class="fab fa-lg fa-linkedin"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- <script>
+	function showSuccessMessage() {
+		var successMessage = document.querySelector('.alert-success');
+		if (successMessage) {
+			successMessage.style.display = 'block';
+		}
+	}
+	function showErrorMessage() {
+		var errorMessage = document.querySelector('.alert-danger');
+		if (errorMessage) {
+			errorMessage.style.display = 'block';
+		}
+	}
+</script> -->
+<script>
+    function showSuccessMessage() {
+		console.error("shankar");
+		var email = document.querySelector('input[name="email"]').value;
+        var successMessage = document.querySelector('.alert-success');
+        if (successMessage) {
+            successMessage.style.display = 'block';
+        }
+        // Call your Node.js server here
+        fetch('http://localhost:3001/join-waitlist', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+			body: JSON.stringify({ email: email }) // You can pass data to your server if needed
+        })
+        .then(response => {
+            if (response.ok) {
+                console.error("okay")
+            } else {
+				console.error("notokay")
+                // Handle error response from server
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Handle error
+        });
+    }
+
+    function showErrorMessage() {
+        var errorMessage = document.querySelector('.alert-danger');
+        if (errorMessage) {
+            errorMessage.style.display = 'block';
+        }
+        // Call your Node.js server here
+        fetch('http://localhost:3001/join-waitlist', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: 'Error' }) // You can pass data to your server if needed
+        })
+        .then(response => {
+            if (response.ok) {
+                // Handle success response from server
+            } else {
+                // Handle error response from server
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Handle error
+        });
+    }
+</script>
